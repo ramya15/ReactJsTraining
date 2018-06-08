@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "lib" :[
+            "dom",
+            "es2015",
+            "es2016"
+        ]
+    },
+    "files":[
+        "app.ts"
+    ],
+    "compileOnSave": true
+}

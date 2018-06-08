@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "lib":[
+            "dom",
+            "es2015",
+            "es2016"
+        ]
+    },
+    "files":[
+        //"*.ts" //for all .ts "files"
+        "app.ts",
+        "interfaceImp.ts"
+    ],
+    "compileOnSave": true
+}
