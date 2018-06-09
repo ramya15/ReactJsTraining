@@ -1,8 +1,5 @@
 import {ICartItem} from '../Models/CartItem';
 export class Cart {
-        constructor(){
-
-        }
         private items: Array<ICartItem> =[];
         addToCart(productId: number){
             this.items.push({
