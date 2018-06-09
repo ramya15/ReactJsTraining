@@ -1,0 +1,7 @@
+In CMD > npm init -y
+
+GOTO: https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
+
+npm install webpack --save
+
+npm install --save-dev typescript awesome-typescript-loader source-map-loader
