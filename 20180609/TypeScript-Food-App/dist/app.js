@@ -18,7 +18,7 @@
         };
         Cart.prototype.renderCartBox = function () {
             var miniCartContainerEl = document.querySelector('.mini-cart');
-            miniCartContainerEl.textContent = 'You have selected ${this.id} in your cart';
+            miniCartContainerEl.textContent = "You have selected " + this.items.id + " in your cart";
         };
         return Cart;
     }());
@@ -83,3 +83,4 @@
     productList.renderList();
     cart.renderCartBox();
 })();
+//# sourceMappingURL=app.js.map

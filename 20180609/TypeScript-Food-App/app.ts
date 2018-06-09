@@ -35,7 +35,8 @@
         }
         renderCartBox(){
             const miniCartContainerEl = document.querySelector('.mini-cart');
-            miniCartContainerEl.textContent = 'You have selected ${this.id} in your cart';
+            // use bytecode colon below
+            miniCartContainerEl.textContent = `You have selected ${this.items.id} in your cart`;
         }
     }
 
