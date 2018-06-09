@@ -1,7 +1,15 @@
 {
     "compilerOptions": {
-        "outDir": "dist"
+        "outDir": "dist",
+        "experimentalDecorators": true,
+        "lib": [
+            "dom",
+            "es2015",
+            "es2016"
+        ],
+        "target": "es5"
     },
+    "compileOnSave": true,
   "name": "typescript-webpack-start",
   "version": "1.0.0",
   "description": "",
