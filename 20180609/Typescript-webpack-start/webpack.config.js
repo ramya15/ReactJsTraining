@@ -1,5 +1,6 @@
 module.exports = {
-    entry: "./src/index.tsx",
+    entry: "./src/index.ts",
+    //entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
         path: __dirname + "/dist"
@@ -10,7 +11,8 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: [".ts", ".js", ".json"]
+        //extensions: [".ts", ".tsx", ".js", ".json"]
     },
 
     module: {
