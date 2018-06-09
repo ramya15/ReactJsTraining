@@ -5,3 +5,13 @@ GOTO: https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
 npm install webpack --save
 
 npm install --save-dev typescript awesome-typescript-loader source-map-loader
+
+-- Create tsconfig.json
+
+npm install webpack-cli --save-dev
+
+-- Create .ts file
+
+>npm run build
+
+>npm run
