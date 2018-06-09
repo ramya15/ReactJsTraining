@@ -5,7 +5,9 @@
             "dom",
             "es2015",
             "es2016"
-        ]
+        ],
+        //to view source code in original format
+        "sourceMap": true 
     },
     "files": [
         "app.ts"

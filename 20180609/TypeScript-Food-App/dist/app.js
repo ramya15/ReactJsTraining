@@ -5,22 +5,32 @@
             this.items = [];
         }
         Cart.prototype.addToCart = function (productId) {
+            this.items.push({
+                id: this.items.length + 1,
+                productId: productId,
+                quantity: 1
+            });
+            this.renderCartBox();
         };
         Cart.prototype.getCartItems = function () {
         };
         Cart.prototype.getTotalNumOfItems = function () {
         };
         Cart.prototype.renderCartBox = function () {
+            var miniCartContainerEl = document.querySelector('.mini-cart');
+            miniCartContainerEl.textContent = 'You have selected ${this.id} in your cart';
         };
         return Cart;
     }());
     var ProductList = /** @class */ (function () {
-        function ProductList(list) {
+        function ProductList(list, cart) {
             this.list = list;
+            this.cart = cart;
             this.prodListContainer = document.querySelector(".product-list");
         }
         ProductList.prototype.renderList = function () {
             var _this = this;
+            var count = 0;
             this.list.forEach(function (item) {
                 var divMain = document.createElement('div');
                 divMain.className = "product-item";
@@ -33,6 +43,9 @@
                 divMain.appendChild(divEl);
                 divMain.appendChild(imgEl);
                 divMain.appendChild(btnEl);
+                btnEl.addEventListener('click', function () {
+                    _this.cart.addToCart(item.id);
+                });
                 _this.prodListContainer.appendChild(divMain);
             });
         };
@@ -52,19 +65,21 @@
             price: 30
         },
         {
-            id: 1,
+            id: 3,
             title: "Samosa",
             imgURL: "images/Samosa.jpg",
             price: 15
         },
         {
-            id: 1,
+            id: 4,
             title: "Jamoon",
             imgURL: "images/Jamoon.jpg",
             price: 10
         }
     ];
     //Invoking methods
-    var productList = new ProductList(products);
+    var cart = new Cart();
+    var productList = new ProductList(products, cart);
     productList.renderList();
+    cart.renderCartBox();
 })();

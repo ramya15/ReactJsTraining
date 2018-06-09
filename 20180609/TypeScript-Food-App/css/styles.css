@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: aqua;
+    border-bottom: 2px solid gray;
+    padding: 10px;
+}
+.product-item {
+    border: 1px solid #000;
+    margin: 10px;
+    padding: 0;
+    display: inline-block;
+    width: 45%;
+    height: 300px;
+}
+.product-item img{
+    width: 200px;
+    max-height: 200px;
+}
+
+.product-item btn {
+    
+}
+
+.product-item h3 {
+    
+}
+
+.product-item p {
+    
+}
+
+.mini-cart {
+    float: right;
+}
+
