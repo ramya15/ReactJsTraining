@@ -36,7 +36,7 @@
         renderCartBox(){
             const miniCartContainerEl = document.querySelector('.mini-cart');
             // use bytecode colon below
-            miniCartContainerEl.textContent = `You have selected ${this.items.id} in your cart`;
+            miniCartContainerEl.textContent = `You have selected ${this.} in your cart`;
         }
     }
 
