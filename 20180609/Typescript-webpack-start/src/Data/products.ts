@@ -2,26 +2,26 @@ import {IProduct} from '../Models/Product';
 export const products: Array<IProduct> = [
         {
             id: 1,
-            title: "Full Meals",
-            imgURL: ".././images/FullMeals.jpg",
-            price: 50
+            title: "Kachori",
+            imgURL: "http://www.cityummies.com/wp-content/uploads/2015/07/new-pics-nov-19th-997.jpg",
+            price: 15
         },
         {
             id: 2,
-            title: "Poori",
-            imgURL: ".././images/Poori.jpg",
+            title: "French Fries",
+            imgURL: "https://steemitimages.com/0x0/http://www.realclearlife.com/wp-content/uploads/2016/11/GettyImages-557995293-800x570.jpg",
             price: 30
         },
         {
             id: 3,
-            title: "Samosa",
-            imgURL:".././images/Samosa.jpg",
-            price: 15
+            title: "Ice-cream",
+            imgURL:"https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-s3.si.com%2Fs3fs-public%2Fstyles%2Fmarquee_large_2x%2Fpublic%2F2014%2F07%2F23%2Fscreen_shot_2014-07-23_at_2.44.11_pm.png",
+            price: 45
         },
         {
             id: 4,
-            title: "Jamoon",
-            imgURL:".././images/Jamoon.jpg",
-            price: 10
+            title: "Snack",
+            imgURL:"http://blog1.myd.la/2015/07/url.jpg",
+            price: 20
         }
     ];

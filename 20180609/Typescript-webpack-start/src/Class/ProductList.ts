@@ -8,8 +8,10 @@ export class ProductList {
         renderList(): void {
             this.list.forEach((item:IProduct) => {
                 const divMain: HTMLDivElement = document.createElement('div');
-                divMain.className = "product-item";
+                divMain.className = 'product-item col-12, col-sm-6';
+                //divMain.className = "product-item";
                 
+                const prodTitleEl: HTMLHeadingElement = document.createElement('h3');
                 const divEl: HTMLDivElement = document.createElement('div');
                 const imgEl: HTMLImageElement = document.createElement('img');
                 const btnEl: HTMLButtonElement = document.createElement('button');
@@ -17,6 +19,7 @@ export class ProductList {
                 divEl.textContent = item.title + " - Price: " + item.price;
                 imgEl.src = item.imgURL;
                 btnEl.innerHTML = "Add to Cart";
+                btnEl.className = 'btn btn-primary';
 
                 btnEl.addEventListener('click', ()=>{
                     this.cart.addToCart(item.id);
