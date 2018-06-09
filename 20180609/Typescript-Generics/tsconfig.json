@@ -1,4 +1,7 @@
 {
+    "compilerOptions": {
+        "outDir": "dist"
+    },
   "name": "typescript-webpack-start",
   "version": "1.0.0",
   "description": "",
