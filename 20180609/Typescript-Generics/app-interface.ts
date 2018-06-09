@@ -15,7 +15,7 @@ const ab: IB = {
 
 //As a Type
 type UserType = {
-    name: string;
+    readonly name: string;  //tells name is a read-only property
     age: number;
 }
 
@@ -41,3 +41,21 @@ const user: CompositionUser = {
     age: 10,
     email: 'em@il.com'
 }
+
+//Mapped Properties
+//To make type as read-only
+
+type ReadOnlyUType = Readonly<User1>;
+
+const noRead: ReadOnlyUType = {
+    name: '',
+    age:10
+}
+
+
+//To make every property optional
+
+type OptionalType = Partial<User1>;
+const opt: OptionalType = {
+
+};
