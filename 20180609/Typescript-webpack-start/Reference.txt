@@ -1,17 +1,21 @@
-In CMD > npm init -y
+In CMD 
+> npm init -y
 
 GOTO: https://www.typescriptlang.org/docs/handbook/react-&-webpack.html
 
-npm install webpack --save
+> npm install webpack --save
 
-npm install --save-dev typescript awesome-typescript-loader source-map-loader
+> npm install --save-dev typescript awesome-typescript-loader source-map-loader
 
--- Create tsconfig.json
+> npm install webpack-cli --save-dev
 
-npm install webpack-cli --save-dev
+: make change in .ts
 
--- Create .ts file
+> npm run build
 
->npm run build
+------------------
+> npm install bootstrap
 
->npm run
+------------------
+> npm install jquery --save
+> npm install --save @types/jquery --save-dev
