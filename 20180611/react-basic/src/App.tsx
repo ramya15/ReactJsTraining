@@ -2,14 +2,20 @@ import * as React from 'react';
 import './App.css';
 
 class App extends React.Component {
-  public onBtnClick = () =>{
-      alert('Hello');
+  public state = {
+      title: "Initial title"
     }
+
+  public btnClick = () => {
+    this.setState({
+      title: "new title"
+    });
+  }
   public render() {
     return (
       <div className="App">
-        Hello
-        <button onClick={this.onBtnClick}>Click Me!</button>  
+        Hello {this.state.title}
+        <button onClick={this.btnClick}>click me!</button>
       </div>
     );
   }
