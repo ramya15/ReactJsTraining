@@ -4,7 +4,8 @@ import { Cart } from '../Class/Cart';
 export class ProductList {
         private prodListContainer: HTMLDivElement;
         constructor(public list: Array<IProduct>, public cart: Cart){
-            this.prodListContainer = document.querySelector('.product-list') as HTMLDivElement;
+            this.prodListContainer = $('.product-list') as JQuery<HTMLDivElement>;
+            //this.prodListContainer = document.querySelector('.product-list') as HTMLDivElement;
         }
         renderList(): void {
             this.list.forEach((item:IProduct) => {
