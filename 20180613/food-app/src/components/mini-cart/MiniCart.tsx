@@ -10,7 +10,7 @@ class MiniCart extends React.Component<IProps>{
 	public render(){
 		return(
 			<div>	
-				{this.props.cart.length}
+				You have {this.props.cart.length} items in your cart
 			</div>
 		)
 	}
