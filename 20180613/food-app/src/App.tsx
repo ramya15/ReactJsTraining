@@ -10,16 +10,19 @@ import IProduct from './models/product';
 interface IState {
   cart: ICartItem[];
   products: IProduct[];
+  showLoader: boolean;
 };
 
 class App extends React.Component<{}, IState> {
 
   public state: Readonly<IState> = {
     cart: [],
-    products: [
-      {"id":1,"title":"Generic Cotton Bike","description":"Home","price":9.00,"imageUrl":"https://unsplash.it/200?image=1"},
-      {"id":2,"title":"Ergonomic Frozen Sausages","description":"card","price":241.00,"imageUrl":"https://unsplash.it/200?image=2"}
-    ]
+    products:[],
+    showLoader: true
+    // products: [
+    //   {"id":1,"title":"Generic Cotton Bike","description":"Home","price":9.00,"imageUrl":"https://unsplash.it/200?image=1"},
+    //   {"id":2,"title":"Ergonomic Frozen Sausages","description":"card","price":241.00,"imageUrl":"https://unsplash.it/200?image=2"}
+    // ],
   };
 
   public componentWillMount(){
@@ -28,7 +31,8 @@ class App extends React.Component<{}, IState> {
       .get('http://5b209267ca762000147b2570.mockapi.io/api/Products')
       .end((err: superagent.ResponseError, res: superagent.Response)=>{
         this.setState({
-        products: res.body
+          products: res.body,
+          showLoader: false
       });
     });
 
@@ -42,6 +46,15 @@ class App extends React.Component<{}, IState> {
   }
 
   public render() {
+    let loaderComponent = null;
+    if(this.state.showLoader){
+      loaderComponent = (
+        <div className="progress">
+          <div className="progress-bar progress-bar-striped progress-bar-animated" 
+            role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} />
+        </div>
+      )
+    }
     return (
       <div>
         <div className="container">
@@ -56,6 +69,7 @@ class App extends React.Component<{}, IState> {
           </div>
           <div className="container">
             <ProductList list={this.state.products}/>
+            {loaderComponent}
           </div>
       </div>
     );
