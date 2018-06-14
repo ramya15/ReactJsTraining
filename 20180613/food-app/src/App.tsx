@@ -1,9 +1,12 @@
 import * as superagent from 'superagent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
+import { Route , Link } from 'react-router-dom';
 import './App.css';
 import MiniCart from './components/mini-cart/MiniCart';
 import ProductList from './components/product-list/ProductList';
+import Home from './pages/home/Home';
+import About from './pages/about/About';
 import ICartItem from './models/cartitem';
 import IProduct from './models/product';
 
@@ -25,8 +28,17 @@ class App extends React.Component<{}, IState> {
     // ],
   };
 
-  public componentWillMount(){
-    // super({});
+  public getCart = () =>{
+    superagent
+      .get('http://5b209267ca762000147b2570.mockapi.io/api/Cart')
+      .end((err: superagent.ResponseError, res: superagent.Response) =>{
+        this.setState({
+          cart: res.body
+        });
+    });
+  }
+
+  public getProduct = () =>{
     superagent
       .get('http://5b209267ca762000147b2570.mockapi.io/api/Products')
       .end((err: superagent.ResponseError, res: superagent.Response)=>{
@@ -35,14 +47,13 @@ class App extends React.Component<{}, IState> {
           showLoader: false
       });
     });
+  }
 
-    superagent
-      .get('http://5b209267ca762000147b2570.mockapi.io/api/Cart')
-      .end((err: superagent.ResponseError, res: superagent.Response) =>{
-        this.setState({
-          cart: res.body
-        });
-    });
+  public componentWillMount(){
+    // super({});
+    this.getProduct();
+    this.getCart();
+    
   }
 
   public render() {
@@ -63,16 +74,45 @@ class App extends React.Component<{}, IState> {
               <h3>Food App</h3>
             </div>
             <div className="col-4">
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="col-4">
               <MiniCart cart={this.state.cart}/>
             </div>
           </nav>
+          <div className="container">
+            <div className="row">
+              <div className="col">
+                <Route
+                  exact={true}
+                  path="/"
+                  component={Home}
+                />
+                <Route
+                  path="/about"
+                  component={About}
+                />
+              </div>
+            </div>
+          </div>
           </div>
           <div className="container">
-            <ProductList list={this.state.products}/>
+            <ProductList 
+              getCart = {this.getCart}
+              list={this.state.products}/>
             {loaderComponent}
           </div>
       </div>
-    );
+    )
   }
 }
 

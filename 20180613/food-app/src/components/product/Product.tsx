@@ -4,26 +4,30 @@ import './Product.css';
 
 interface IProps{
 	item: IProduct;
+	onAddtoCart: Function;
 }
 
-class Product extends React.Component<IProps> {
-	public render(){
-		return (
+const Product: React.SFC<IProps> = ({item, onAddtoCart}: IProps) =>{
+	const onClickEvent = () =>{
+		onAddtoCart(item.id);
+	}
+	return (
 			<div className="col-6 bg-gold">
 				<div className="card">	
-					<img className="card-imp-top dib shadow-1 pa3" src={this.props.item.imageUrl} />
+					<img className="card-imp-top dib shadow-1 pa3" src={item.imageUrl} />
 					<div className="card-body">
 						<h3 className="card-title">
-							{this.props.item.title}
+							{item.title}
 						</h3>
 						<p className="card-text">
-							{this.props.item.description}
+							{item.description}
 						</p>
 						<p className="card-text">
-							{this.props.item.price}
+							{item.price}
 						</p>
 						<div>
-							<button className="btn btn-success">
+							<button className="btn btn-success"
+								onClick={onClickEvent}>
 								Add to Cart
 							</button>
 						</div>
@@ -31,8 +35,13 @@ class Product extends React.Component<IProps> {
 				</div>
 			</div>
 		)
-		
-	}
 }
+
+// class Product extends React.Component<IProps> {
+// 	public render(){
+		
+		
+// 	}
+// }
 
 export default Product;
