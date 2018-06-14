@@ -1,4 +1,4 @@
-import axios from 'axios';
+import * as superagent from 'superagent';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
 import './App.css';
@@ -24,17 +24,27 @@ class App extends React.Component<{}, IState> {
 
   public componentWillMount(){
     // super({});
-    const promise = axios.get('http://5b209267ca762000147b2570.mockapi.io/api/Products');
-    promise.then((response)=> {
-      this.setState({
-        products: response.data
+    superagent
+      .get('http://5b209267ca762000147b2570.mockapi.io/api/Products')
+      .end((err: superagent.ResponseError, res: superagent.Response)=>{
+        this.setState({
+        products: res.body
       });
+    });
+
+    superagent
+      .get('http://5b209267ca762000147b2570.mockapi.io/api/Cart')
+      .end((err: superagent.ResponseError, res: superagent.Response) =>{
+        this.setState({
+          cart: res.body
+        });
     });
   }
 
   public render() {
     return (
-      <div className="container">
+      <div>
+        <div className="container">
           <nav className="site-header sticky-top">
             <div className="col-4">
               <h3>Food App</h3>
@@ -43,6 +53,7 @@ class App extends React.Component<{}, IState> {
               <MiniCart cart={this.state.cart}/>
             </div>
           </nav>
+          </div>
           <div className="container">
             <ProductList list={this.state.products}/>
           </div>

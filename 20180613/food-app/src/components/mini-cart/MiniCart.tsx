@@ -9,7 +9,7 @@ class MiniCart extends React.Component<IProps>{
 
 	public render(){
 		return(
-			<div>	
+			<div className='bg-light-green'>	
 				You have {this.props.cart.length} items in your cart
 			</div>
 		)

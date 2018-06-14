@@ -11,7 +11,7 @@ class Product extends React.Component<IProps> {
 		return (
 			<div className="col-6 bg-gold">
 				<div className="card">	
-					<img className="card-imp-top dib shadow-1" src={this.props.item.imageUrl} />
+					<img className="card-imp-top dib shadow-1 pa3" src={this.props.item.imageUrl} />
 					<div className="card-body">
 						<h3 className="card-title">
 							{this.props.item.title}
