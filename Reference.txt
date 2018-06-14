@@ -21,37 +21,9 @@ https://www.mockapi.io/ : creates dummy json for the project created
 
 >npm run deploy
 
-
---Use shouldComponentUpdate() when you don not want to update specific component unless there is a change/impact to it/child component
-EX: set return= false for Product comp, if there is change is cart compo
-
-
-StatelessFunctionComponent (SFC): does not have state, purpose is to just display the data retrieved from parent
-
-::Destructuring::
-const myobj = {
-	a: "abc",
-	b: "bcd"
-}
-
-==== above function is == to: const {a, b} = myobj
-
-
-Note: where u define states,, define ur logic in same component
-
-POSTMAN
-
-call(): used to execute fn and set context as well, immediately execute
-apply(): same as call except it tks params in array
-Ex: a.apply(obj, [10,20])
-bind(): even before executing the context is set
-Ex: const fn = a.bind(obj, 10,20);
-fn();
-
-
-
-===============
-Settings-->GIthub pages-enable
+==============================================
+TO CREATE APP
+Settings-->Github pages-enable
 2. In package.json --> put attri "homepage": "copied url from Github pg"
 3. install >npm install gh-pages --save-dev
 
@@ -62,3 +34,37 @@ Settings-->GIthub pages-enable
 5. npm run deploy
 
 6. Goto GitHub settings again-> select created branch and save
+
+=============================================================
+Info:
+
+1. Use shouldComponentUpdate() when you don not want to update specific component unless there is a change/impact to it/child component
+EX: set return= false for Product comp, if there is change is cart compo
+
+
+2. StatelessFunctionComponent (SFC): does not have state, purpose is to just display the data retrieved from parent
+
+3. Destructuring::
+const myobj = {
+	a: "abc",
+	b: "bcd"
+}
+
+above function is == to: const {a, b} = myobj
+
+
+Note: where u define states, define ur logic in same component
+
+ 
+4. 
+call(): used to execute fn and set context as well, immediately execute
+apply(): same as call except it tks params in array
+Ex: a.apply(obj, [10,20])
+bind(): even before executing the context is set
+Ex: const fn = a.bind(obj, 10,20);
+fn();
+
+POSTMAN: tool for API
+
+https://developer.marvel.com/
+===============
