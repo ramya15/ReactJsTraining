@@ -21,7 +21,7 @@ class ProdDetail extends React.Component<IProps> {
 		prodDetail: undefined
 	}
 	componentWillMount(){
-		const url = 'http://5b209267ca762000147b2570.mockapi.io/api/Products/$(this.props.match.params.productId}';
+		const url = `http://5b209267ca762000147b2570.mockapi.io/api/Products/${this.props.match.params.productId}`;
 		superagent
 		.get(url)
       	.end((err: superagent.ResponseError, res: superagent.Response) => {
@@ -35,7 +35,9 @@ class ProdDetail extends React.Component<IProps> {
 			<div>
 				This is the detail page of {this.props.match.params.productId}
 				{/* using ternary operator here to check if prodDetail is undefined or has a value */}
-				<p>Name: {this.state.prodDetail ? this.state.prodDetail.title : undefined}</p>
+				<p>
+					Name: {this.state.prodDetail ? this.state.prodDetail.title : "No product selected"}
+				</p>
 			</div>
 		)
 	}

@@ -21,6 +21,24 @@ https://www.mockapi.io/ : creates dummy json for the project created
 
 >npm run deploy
 
+Package: react-router
+
+http://definitelytyped.org/
+https://microsoft.github.io/TypeSearch/
+
+https://reactstrap.github.io/
+
+>npm install --save reactstrap 
+>npm install --save-dev @types/reactstrap
+
+
+-----------------------------------------------------------
+
+https://reacttraining.com/react-router/web/example/basic
+
+>npm install react-router-dom --save
+>npm install --save-dev @types/react-router-dom
+
 ==============================================
 TO CREATE APP
 Settings-->Github pages-enable

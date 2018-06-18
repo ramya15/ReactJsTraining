@@ -6,6 +6,7 @@ import './App.css';
 import MiniCart from './components/mini-cart/MiniCart';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
+import AddProduct from './pages/addproduct/AddProduct';
 import ProdDetail from './pages/productdetail/ProdDetail';
 import ICartItem from './models/cartitem';
 
@@ -56,6 +57,9 @@ class App extends React.Component<{}, IState> {
               <li>
                 <Link to="/about">About</Link>
               </li>
+              <li>
+                <Link to="/addproduct">Add Product</Link>
+              </li>
             </ul>
           </div>
           <div className="col-4">
@@ -76,6 +80,10 @@ class App extends React.Component<{}, IState> {
                 <Route
                   path="/productdetail/:productId"
                   component={ProdDetail}
+                />
+                <Route
+                  path="/addproduct"
+                  component={AddProduct}
                 />
         </div>
       </div>

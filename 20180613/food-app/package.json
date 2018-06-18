@@ -8,6 +8,7 @@
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.16.0",
+    "reactstrap": "^6.1.0",
     "superagent": "^3.8.3"
   },
   "scripts": {
@@ -22,6 +23,7 @@
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
     "@types/react-router-dom": "^4.2.7",
+    "@types/reactstrap": "^6.0.0",
     "@types/superagent": "^3.8.0",
     "typescript": "^2.9.1"
   }
