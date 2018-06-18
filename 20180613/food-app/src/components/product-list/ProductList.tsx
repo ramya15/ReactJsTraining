@@ -1,5 +1,5 @@
-import * as superagent from 'superagent';
 import * as React from 'react';
+import * as superagent from 'superagent';
 import IProduct from '../../models/product';
 import Product from '../product/Product';
 
@@ -10,21 +10,21 @@ interface IProps {
 
 class ProductList extends React.Component<IProps>{
 	//CALLING API
-	public addToCart = (productId: number) => {
-		superagent
-			.post('http://5b209267ca762000147b2570.mockapi.io/api/Cart')
-			.send({
-				productId,
-				quantity: 1
-			})
-			.set('accept', 'json')
-			.end(() =>{
-				alert("Added successfully");
-				this.props.getCart();
-			});
-	}
+    public addToCart = (productId: number) => {
+        superagent
+            .post('http://5b209267ca762000147b2570.mockapi.io/api/Cart')
+            .send({
+                productId,
+                quantity: 1
+            })
+            .set('accept', 'json')
+            .end(() => {
+                alert('Added successfully');
+                this.props.getCart();
+            });
+    }
 
-	// componentWillMount(){
+    // componentWillMount(){
 	// 	//happens only once before rendering to DOM
 	// }
 
@@ -35,27 +35,29 @@ class ProductList extends React.Component<IProps>{
 	// componentDidUpdate(){
 	// 	//happens each time 
 	// }
-
-	shouldComponentUpdate(nextProps:IProps): boolean {
-		//updates ProductList and its child component only when return is true
-		if(nextProps.list.length !== this.props.list.length){
-			return true;
-		}
-		return false;
-	}
-
-	public render(){
-		const products = this.props.list.map(p=> {
-			return(
-				<Product
-					item = {p}
-					key= {p.id}
-					onAddToCart = {this.addToCart}
-					//onAddToCart = {this.addToCart.bind(this, p.id)}
-				/>
-			)
-		});
-	}
+    shouldComponentUpdate(nextProps: IProps): boolean{
+    	//updates ProductList and its child component only when return is true
+        if(nextProps.list.length !== this.props.list.length){
+            return true;
+        }
+        return false;
+    }
+    public render(){
+        const products = this.props.list.map(p => {
+            return (
+                <Product 
+                    item={p} 
+                    key={p.id} 
+                    onAddToCart={this.addToCart}
+                />
+            )
+        });
+        return (
+            <div className="row">
+                {products}
+            </div>
+        )
+    }
 }
 
 export default ProductList;
