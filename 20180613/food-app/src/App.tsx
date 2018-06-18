@@ -6,6 +6,7 @@ import './App.css';
 import MiniCart from './components/mini-cart/MiniCart';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
+import ProdDetail from './pages/productdetail/ProdDetail';
 import ICartItem from './models/cartitem';
 
 interface IState {
@@ -41,8 +42,6 @@ class App extends React.Component<{}, IState> {
   }
 
   public render() {
-    
-    
     return (
       <div className="container">
         <nav className="site-header sticky-top row">
@@ -72,6 +71,11 @@ class App extends React.Component<{}, IState> {
                 <Route 
                   path="/about" 
                   component={About} 
+                />
+                {/* : states that it is a dynamic property */}
+                <Route
+                  path="/productdetail/:productId"
+                  component={ProdDetail}
                 />
         </div>
       </div>

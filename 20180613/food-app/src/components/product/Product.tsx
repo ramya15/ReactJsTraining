@@ -12,7 +12,7 @@ const Product: React.SFC<IProps> = ({item, onAddToCart}: IProps) => {
         onAddToCart(item.id);
     };
     return (
-        <div className="col-6 product">  
+        <div className="col-4 product">  
             <div className="card bg-info">                    
                 <img className="card-img-top" src={item.imageUrl} />
                 <div className="card-body">
@@ -32,7 +32,7 @@ const Product: React.SFC<IProps> = ({item, onAddToCart}: IProps) => {
                             Add to Cart
                         </button>
 
-                        <Link className="btn btn-primary"
+                        <Link className="btn btn-primary pa3"
                             to={'/productdetail/'+item.id}>
                             View Detail
                         </Link>
