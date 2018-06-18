@@ -1,6 +1,7 @@
 import * as superagent from 'superagent';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 interface IState {
     isModalOpen: boolean;
@@ -23,7 +24,7 @@ class AddProduct extends React.Component<{}, IState>{
             imageUrl: this.imgUrlInput.value
         };
         superagent
-            .post('http://5b209234ca762000147b254f.mockapi.io/products')
+            .post('http://5b209267ca762000147b2570.mockapi.io/api/Products')
             .send(inputValue)
             .set('accept', 'json')
             .end(() => {
@@ -65,11 +66,11 @@ class AddProduct extends React.Component<{}, IState>{
                     Product Added
                 </ModalBody>
                 <ModalFooter>
-                    <button 
+                    <Link to="/" 
                         onClick={this.closeModal}
                         className="btn btn-default">
                         Close
-                    </button>
+                    </Link>
                 </ModalFooter>
             </Modal>
         )
