@@ -31,7 +31,11 @@ const Product: React.SFC<IProps> = ({item, onAddToCart}: IProps) => {
                             className="btn btn-success">
                             Add to Cart
                         </button>
-                        <Link to="/productdetail">Product Detail</Link>
+
+                        <Link className="btn btn-primary"
+                            to={'/productdetail/'+item.id}>
+                            View Detail
+                        </Link>
                     </div>
                 </div>
             </div>
