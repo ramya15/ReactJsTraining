@@ -15,14 +15,18 @@ class TodoStore extends ReduceStore<IState, IAction>{
         // 1. calling parent fn 
         super(AppDispatcher);
     }
+
+    // stores how it starts with
     public getInitialState(): IState {
         return {
             todos: []
         };
     }
+
     // reduce() of store gets 2 info: 
     // current state and what is the current action
     // based on current action should update the state
+    // any action is dispatched, this method is executed
     public reduce(state: IState, action: IAction): IState {
         // store now check what it wants
         // if interested, modifies the state else returns existing state

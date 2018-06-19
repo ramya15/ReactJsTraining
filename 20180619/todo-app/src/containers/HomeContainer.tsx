@@ -8,21 +8,28 @@ interface IState{
 }
 class HomeContainer extends React.Component<{},IState>{
     // All stores you are interested in
+    // flux will get aware which all stores are required
     public static getStores(){
         return[
             TodoStore
         ];
     }
+    
     // what data we are interested in
+    // whenever there is a change in data, this will be executed
     public static calculateState(): IState{
         return{
             // return the latest state
             todos: TodoStore.getState().todos
         };
     }
+
+    // Pass the data to the dump component
     public render(){
         return(
-            <TodoList todos={this.state.todos} />
+            <React.Fragment>
+                <TodoList todos={this.state.todos} />
+            </React.Fragment>
         )
     }
 }

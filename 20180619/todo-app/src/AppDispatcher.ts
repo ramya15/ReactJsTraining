@@ -1,6 +1,7 @@
 import {Dispatcher} from 'flux';
 // simply dispatch info across app
-// if error write as:
+// only one Dispatcher is required for whole app
+
 interface IAction {
     type: string,
     payload: string
