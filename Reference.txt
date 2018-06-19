@@ -85,4 +85,12 @@ fn();
 POSTMAN: tool for API
 
 https://developer.marvel.com/
-===============
+=======================================
+1. npm install -g create-react-app
+2. create-react-app <project-name> --scripts-version=react-scripts-ts
+Install dependency packages
+3. npm install bootstrap --save
+4. npm install react-router-dom --save
+5. npm install @types/react-router-dom --save-dev
+
+Dispatch: passes info between action(controller), store(model) & component(view)
