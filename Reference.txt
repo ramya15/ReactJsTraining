@@ -85,12 +85,47 @@ fn();
 POSTMAN: tool for API
 
 https://developer.marvel.com/
-=======================================
+
+https://jsbin.com/
+
+Spread operator: can be used to create new instance
+const arr = [1,2,3]
+const arr1 = [...arr, 4]	//doesnt override original
+
+const obj = {
+	a: 'ab',
+b: 'abc'
+}
+
+const obj1 = {
+	...obj1
+	b: 'newvalue',
+	c: 'cc'
+}
+
+console.log(obj);	// a: "ab", b: "abc"
+console.log(obj1); 	// b: "newvalue", c: "cc"
+=====================================================================
 1. npm install -g create-react-app
 2. create-react-app <project-name> --scripts-version=react-scripts-ts
+
+Search for dependency packages in:
+http://definitelytyped.org/
+Goto TypeSearch
+https://microsoft.github.io/TypeSearch/
+
 Install dependency packages
 3. npm install bootstrap --save
 4. npm install react-router-dom --save
 5. npm install @types/react-router-dom --save-dev
 
-Dispatch: passes info between action(controller), store(model) & component(view)
+----------------------------------------------------
+Flux:
+https://github.com/facebook/flux
+
+1. npm install flux --save
+2. npm install @types/flux --save-dev
+
+Dispatcher: passes info between action(controller), store(model) & component(view)
+
+Container: Smart component who know which action to call & which data to read from

@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as React from 'react';
-import { Route , Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import './App.css';
+import HomeContainer from './containers/HomeContainer';
 
 class App extends React.Component<{},{}> {
   public render() {
@@ -16,26 +17,19 @@ class App extends React.Component<{},{}> {
             <div className="collapse navbar-collapse" id="navbarsExampleDefault">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                  <Link to='/'>Home</Link>
+                  <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">Link</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled" href="#">Disabled</a>
                 </li>
               </ul>
             </div>
           </nav>
 
           <main role="main" className="container">
-            <div className="starter-template">
-              <h1>Bootstrap starter template</h1>
-            </div>
+              <h1>Todo List</h1>
+              <Route exact={true} path="/" component={HomeContainer} />
           </main>
-
-          <Route>
-          </Route>
       </React.Fragment>
     );
   }
