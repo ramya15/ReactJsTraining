@@ -22,7 +22,7 @@ class App extends React.Component<{},{}> {
                   <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/containers">Add Todo</Link>
+                  <Link className="nav-link" to="/add-todo">Add Todo</Link>
                 </li>
               </ul>
               <TodoCountContainer />
@@ -32,7 +32,7 @@ class App extends React.Component<{},{}> {
           <main role="main" className="container">
               <h1>Todo List</h1>
               <Route exact={true} path="/" component={HomeContainer} />
-              <Route path="/containers" component={AddTodoContainer} />
+              <Route path="/add-todo" component={AddTodoContainer} />
           </main>
       </React.Fragment>
     );
