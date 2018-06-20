@@ -140,9 +140,16 @@ Mocha + Chai library (for assertion) + Sinon (for Spying)
 
 Jasmine has both
 
-Test runners:
-Karma
+Test runners:Karma
 
 Internally use Jasmine and wrapper on top of Jasmine called Jest (framework)
 
 Enzyme: lib used to render React component, used for unit testing the ReactJs
+
+npm i --save-dev enzyme enzyme-adapter-react-16
+npm install @types/enzyme --save-dev
+
+Authentication:
+
+------
+https://github.com/enaqx/awesome-react
