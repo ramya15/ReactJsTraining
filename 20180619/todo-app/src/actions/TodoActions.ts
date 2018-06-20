@@ -8,3 +8,10 @@ export const addTodo = (todoItem: string) => {
         type: 'ADD_TODO'
     });
 };
+
+export const deleteTodo = (indexOfItem : number) =>{
+    AppDispatcher.dispatch({
+        payload: indexOfItem,
+        type: 'DELETE_TODO'
+    });
+}
