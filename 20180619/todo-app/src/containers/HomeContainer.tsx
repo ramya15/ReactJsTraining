@@ -4,6 +4,8 @@ import TodoList from '../components/TodoList';
 import TodoStore from '../stores/TodoStore';
 import { deleteTodo } from '../actions/TodoActions';
 
+// we use: {} for import when this is not exported as default
+
 interface IState{
     todos: string[];
 }

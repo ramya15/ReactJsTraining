@@ -129,3 +129,20 @@ https://github.com/facebook/flux
 Dispatcher: passes info between action(controller), store(model) & component(view)
 
 Container: Smart component who know which action to call & which data to read from
+
+--------------------
+Unit testing frameworks:
+Mocha / Jasmine
+
+Assertion: meeting the expected results
+Spying: to check whether function is called or not
+Mocha + Chai library (for assertion) + Sinon (for Spying)
+
+Jasmine has both
+
+Test runners:
+Karma
+
+Internally use Jasmine and wrapper on top of Jasmine called Jest (framework)
+
+Enzyme: lib used to render React component, used for unit testing the ReactJs

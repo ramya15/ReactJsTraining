@@ -15,3 +15,10 @@ export const deleteTodo = (indexOfItem : number) =>{
         type: 'DELETE_TODO'
     });
 }
+
+export const editTodo = (indexOfItem: number) =>{
+    AppDispatcher.dispatch({
+        payload: indexOfItem,
+        type: 'SAVE_TODO'
+    });
+}

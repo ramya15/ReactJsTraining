@@ -15,7 +15,7 @@ const AddTodoComponent: React.SFC<IProps> = ({onAddTodo}:IProps) => {
     return(
         <div className="form-group">
             <input type='text' ref={setInputEl} />
-            <Link to='/' className="btn btn-primary" onClick={onBtnClick}>Add Todo</Link>
+            <Link to='/' className="btn btn-default" onClick={onBtnClick}>Add Todo</Link>
         </div>
         )
 };
